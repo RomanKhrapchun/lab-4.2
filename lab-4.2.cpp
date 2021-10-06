@@ -15,7 +15,7 @@ int main()
 	cout << fixed;
 	cout << "---------------------------" << endl;
 	cout << "|" << setw(5) << "x" << " |"
-		<< setw(7) << "y" << " |" << endl;
+		 << setw(7) << "y" << " |" << endl;
 	cout << "---------------------------" << endl;
 	x = xp;
 
@@ -24,11 +24,10 @@ int main()
 		A = x;
 		if (x <= -1)
 			B = log10(fabs(cos(5 * x))) + exp((1 / x) + x);
-		else
-			if (x >= 2. / 5)
-				B = sin(5 * x) - sqrt(fabs(1 - x));
-			else
-				B = sqrt(pow((2 * x - 3), 3) - tan(x));
+		if (x > -1 && x < 2. / 5)
+			B = sqrt(pow((2 * x - 3), 3) - tan(x));
+		if (x >= 2. / 5)
+			B = sin(5 * x) - sqrt(fabs(1 - x));
 
 		y = A + B;
 		cout << "|" << setw(7) << setprecision(2) << x
